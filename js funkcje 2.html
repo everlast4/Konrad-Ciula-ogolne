@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div + div{
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" name="liczba1" placeholder="podaj liczbe 1:">
+        <input type="number" name="liczba2" placeholder="podaj liczbe 2:">
+    </div>    
+
+    <div>
+        <button>Suma</button>
+    </div>
+
+    <div>
+        Wynik 
+    </div>
+
+    <script>
+        // pobieranie buttona 
+        const btns = document.querySelector('button');
+        //pobieranie diva, w którym umieszczony zostanie wynik obliczeń
+        const divResults = document.querySelector('div+div+div') //pobranie trzeciego diva (Wynik)
+       
+       //pobieranie inputów
+       const input1 = document.querySelector("input[name='liczba1']");
+       const input2 = document.querySelector("input[name='liczba2']");
+     
+        
+        function suma(l1, l2){
+            return l1+l2;
+        };
+
+        //pod button funkcja zdarzenia click (tworzenie)
+        //pierwszy button
+        btns.addEventListener('click',()=>{
+        //pobieranie wartości inputów
+        const liczba1 = input1.value *1; //konwersja niejawna (coś *1)
+        const liczba2 = input2.value *1;
+        //wyświetlanie wyniku dodawania w divie
+        divResults.textContent = 'Suma liczb wynosi '+ suma (liczba1, liczba2);
+        });
+    </script>    
+</body>
+</html>
