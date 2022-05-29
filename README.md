@@ -1,1 +1,2 @@
-# Konrad Ciuła
+# ogolne
+
